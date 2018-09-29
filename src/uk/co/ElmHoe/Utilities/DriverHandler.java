@@ -44,7 +44,7 @@ public class DriverHandler {
 		chromeOptions.addArguments("--start-maximized");
 		driver = new ChromeDriver(chromeOptions);
 		actions = new Actions(driver);
-
+		
 		return true;	
 	}
 	
@@ -91,5 +91,10 @@ public class DriverHandler {
 		}
 		//End the driver (closing it does not end the driver)
 		driver.quit();
+	}
+	
+	public void deleteCookies()
+	{
+		driver.manage().deleteAllCookies();
 	}
 }
